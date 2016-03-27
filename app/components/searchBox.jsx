@@ -44,7 +44,7 @@ class SearchBox extends React.Component {
         .end((err, res) => {
           if (err) throw err;
           
-          fulfill(res.body);
+          fulfill(res.body.artists);
         });
     });
   }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './style.scss';
 
-import SearchBox from './components/searchBox';
+import SearchBox from './components/SearchBox';
 
 class App extends React.Component {
   constructor() {
