@@ -5,7 +5,8 @@ export default {
   module: {
     loaders: [
       {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.scss$/, exclude: /node_modules/, loaders: ['style', 'css', 'sass']}
+      {test: /\.scss$/, exclude: /node_modules/, loaders: ['style', 'css', 'sass']},
+      {test: /\.png$/, exclude: /node_modules/, loaders: ['url?15000']}
     ]
   },
   output: {

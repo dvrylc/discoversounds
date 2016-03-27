@@ -74,12 +74,14 @@ class SearchBox extends React.Component {
   // Render
   render() {
     return (
-      <input
-        value={this.state.initialArtist}
-        onChange={this.handleChange}
-        onKeyDown={this.handleKeyDown}
-        placeholder="Enter an artist"
-      />
+      <div className="search">
+        <input
+          value={this.state.initialArtist}
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
+          placeholder="Enter an artist"
+        />
+      </div>
     );
   }
 }
