@@ -27,7 +27,8 @@
   "homepage": "https://github.com/dvrylc/discoversounds#readme",
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "superagent": "^1.8.3"
   },
   "devDependencies": {
     "babel-core": "^6.7.4",
