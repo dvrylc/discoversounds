@@ -4,7 +4,7 @@ export default {
   entry: './app/main.js',
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
       {test: /\.scss$/, exclude: /node_modules/, loaders: ['style', 'css', 'sass']}
     ]
   },
@@ -16,5 +16,8 @@ export default {
     new HTMLWebpackPlugin({
       template: __dirname + '/app/index.html'
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 }
