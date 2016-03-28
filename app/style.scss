@@ -40,7 +40,7 @@ a {
 }
 
 .search input {
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   margin: 0 auto;
   display: block;
@@ -103,4 +103,10 @@ a {
   margin: 0 auto;
   
   background: white;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1em;
+  }
 }
