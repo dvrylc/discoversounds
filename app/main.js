@@ -12,8 +12,11 @@ class App extends React.Component {
     super();
     
     this.handleRelatedArtists = this.handleRelatedArtists.bind(this);
+    this.handleSearchError = this.handleSearchError.bind(this);
     
     this.state = {
+      error: false,
+      errorMessage: '',
       relatedArtists: []
     }
   }
@@ -21,7 +24,16 @@ class App extends React.Component {
   // Event listeners
   handleRelatedArtists(artists) {
     this.setState({
+      error: false,
+      error: '',
       relatedArtists: artists
+    });
+  }
+  
+  handleSearchError(err) {
+    this.setState({
+      error: true,
+      errorMessage: err
     });
   }
   
@@ -29,8 +41,17 @@ class App extends React.Component {
     return (
       <div id="app">
         <Header />
-        <SearchBox handleRelatedArtists={this.handleRelatedArtists} />
-        <ArtistList artists={this.state.relatedArtists} />
+        
+        <SearchBox
+          handleRelatedArtists={this.handleRelatedArtists}
+          handleSearchError={this.handleSearchError}
+        />
+        
+        <ArtistList
+          error={this.state.error}
+          errorMessage={this.state.errorMessage}
+          artists={this.state.relatedArtists}
+        />
       </div>
     );
   }

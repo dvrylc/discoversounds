@@ -58,6 +58,12 @@ a {
 .artist-list {
   flex: 1 1 auto;
   overflow: scroll;
+  
+  .error-message {
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+  }
 }
 
 .artist-row {

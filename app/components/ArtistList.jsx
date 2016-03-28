@@ -4,15 +4,23 @@ import ArtistRow from './ArtistRow';
 
 class ArtistList extends React.Component {
   render() {
-    var artistRows = this.props.artists.map((artist, index) => {
-      return <ArtistRow key={index} artist={artist} />
-    });
-    
-    return (
-      <div className="artist-list">
-        {artistRows}
-      </div>
-    );
+    if (this.props.error) {
+      return (
+        <div className="artist-list">
+          <span className="error-message">{this.props.errorMessage}</span>
+        </div>
+      );
+    } else {
+      var artistRows = this.props.artists.map((artist, index) => {
+        return <ArtistRow key={index} artist={artist} />
+      });
+      
+      return (
+        <div className="artist-list">
+          {artistRows}
+        </div>
+      );
+    }
   }
 }
 
