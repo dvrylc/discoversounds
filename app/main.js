@@ -32,7 +32,7 @@ class App extends React.Component {
         <SearchBox handleRelatedArtists={this.handleRelatedArtists} />
         <ArtistList artists={this.state.relatedArtists} />
       </div>
-    )
+    );
   }
 }
 
