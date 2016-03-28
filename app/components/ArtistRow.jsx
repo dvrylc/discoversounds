@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ArtistLink from './ArtistLink';
+
 class ArtistRow extends React.Component {
   render() {
     var artist = this.props.artist;
@@ -15,7 +17,9 @@ class ArtistRow extends React.Component {
         <div className="img" style={styles} />
         <span className="artist">{artist.name}</span>
         <div className="links">
-          links
+          <ArtistLink service="google" artist={artist.name} />
+          <ArtistLink service="youtube" artist={artist.name} />
+          <ArtistLink service="spotify" artist={artist.name} />
         </div>
       </div>
     );
