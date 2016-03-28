@@ -5,6 +5,7 @@ import './style.scss';
 
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
+import ArtistList from './components/ArtistList';
 
 class App extends React.Component {
   constructor() {
@@ -26,12 +27,13 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div id="app">
         <Header />
         <SearchBox handleRelatedArtists={this.handleRelatedArtists} />
+        <ArtistList artists={this.state.relatedArtists} />
       </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app-container'));

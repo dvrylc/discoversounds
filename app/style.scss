@@ -2,12 +2,10 @@
 
 $darkblue: #283593;
 $blue: #3949AB;
+$grey: #E6E6E6;
 
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
+html, body, #app-container {
+  height: 100%;
 }
 
 body {
@@ -27,16 +25,18 @@ a {
   border-bottom: 1px solid $darkblue;
 }
 
-
 .header, .search {
-  text-align: center;
-  
-  padding: 20px 0;
-  border-bottom: 1px solid #E6E6E6;
+  flex: 0 1 auto;
+  padding: 20px 15px;
+  border-bottom: 1px solid $grey;
 }
 
-.header img {
-  width: 100%;
+.header {
+  text-align: center;
+  
+  img {
+    width: 100%;
+  }
 }
 
 .search input {
@@ -55,12 +55,46 @@ a {
   border: none;
 }
 
+.artist-list {
+  flex: 1 1 auto;
+  overflow: scroll;
+}
+
+.artist-row {
+  padding: 15px;
+  
+  border-bottom: 1px solid $grey;
+  
+  .img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 15px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .artist {
+    line-height: 40px;
+  }
+  
+  .links {
+    float: right;
+    line-height: 40px;
+  }
+}
+
 #app {
-  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  
+  height: 100%;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 10px;
-    
+  
   background: white;
 }
