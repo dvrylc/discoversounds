@@ -16,11 +16,7 @@ class ArtistRow extends React.Component {
       <div className="artist-row">
         <div className="img" style={styles} />
         <span className="artist">{artist.name}</span>
-        <div className="links">
-          <ArtistLink service="google" artist={artist.name} />
-          <ArtistLink service="youtube" artist={artist.name} />
-          <ArtistLink service="spotify" artist={artist.name} />
-        </div>
+        <ArtistLink artist={artist.name} />
       </div>
     );
   }
