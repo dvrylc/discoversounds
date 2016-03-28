@@ -80,6 +80,7 @@ class SearchBox extends React.Component {
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
           placeholder="Enter an artist"
+          autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false"
         />
       </div>
     );
