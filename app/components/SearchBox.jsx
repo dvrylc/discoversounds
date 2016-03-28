@@ -64,6 +64,9 @@ class SearchBox extends React.Component {
       then update main app's state
     */
     if (e.key === 'Enter' && this.state.initialArtist) {
+      // Blur the input
+      e.target.blur();
+      
       this.getArtistID(this.state.initialArtist)
         .then(this.getRelatedArtists)
         .then(this.props.handleRelatedArtists)
