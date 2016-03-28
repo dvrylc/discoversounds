@@ -67,7 +67,7 @@ class SearchBox extends React.Component {
       this.getArtistID(this.state.initialArtist)
         .then(this.getRelatedArtists)
         .then(this.props.handleRelatedArtists)
-        .catch(err => this.props.handleSearchError(err));
+        .catch(this.props.handleSearchError);
     }
   }
   
