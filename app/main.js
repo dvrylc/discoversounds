@@ -12,11 +12,13 @@ class App extends React.Component {
     super();
     
     this.handleRelatedArtists = this.handleRelatedArtists.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSearchError = this.handleSearchError.bind(this);
     
     this.state = {
       error: false,
       errorMessage: '',
+      initialArtist: '',
       relatedArtists: []
     }
   }
@@ -27,6 +29,12 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       relatedArtists: artists
+    });
+  }
+  
+  handleSearchChange(artist) {
+    this.setState({
+      initialArtist: artist
     });
   }
   
@@ -43,7 +51,9 @@ class App extends React.Component {
         <Header />
         
         <SearchBox
+          initialArtist={this.state.initialArtist}
           handleRelatedArtists={this.handleRelatedArtists}
+          handleSearchChange={this.handleSearchChange}
           handleSearchError={this.handleSearchError}
         />
         

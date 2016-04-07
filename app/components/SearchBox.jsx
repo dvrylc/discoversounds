@@ -8,10 +8,6 @@ class SearchBox extends React.Component {
     
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    
-    this.state = {
-      initialArtist: ''
-    }
   }
   
   // Functions
@@ -51,9 +47,7 @@ class SearchBox extends React.Component {
   
   // Event handlers
   handleChange(e) {
-    this.setState({
-      initialArtist: e.target.value
-    });
+    this.props.handleSearchChange(e.target.value);
   }
   
   handleKeyDown(e) {
@@ -63,11 +57,11 @@ class SearchBox extends React.Component {
       then query for related artists
       then update main app's state
     */
-    if (e.key === 'Enter' && this.state.initialArtist) {
+    if (e.key === 'Enter' && this.props.initialArtist !== '') {
       // Blur the input
       e.target.blur();
       
-      this.getArtistID(this.state.initialArtist)
+      this.getArtistID(this.props.initialArtist)
         .then(this.getRelatedArtists)
         .then(this.props.handleRelatedArtists)
         .catch(this.props.handleSearchError);
@@ -79,7 +73,7 @@ class SearchBox extends React.Component {
     return (
       <div className="search">
         <input
-          value={this.state.initialArtist}
+          value={this.props.initialArtist}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
           placeholder="Enter an artist"
