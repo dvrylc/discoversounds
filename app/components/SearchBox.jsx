@@ -10,7 +10,21 @@ class SearchBox extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
   
+  // Lifecycle
+  componentDidUpdate() {
+    if (this.props.triggerNewSearch) {
+      this.triggerSearch();
+    }
+  }
+  
   // Functions
+  triggerSearch() {
+    this.getArtistID(this.props.initialArtist)
+      .then(this.getRelatedArtists)
+      .then(this.props.handleRelatedArtists)
+      .catch(this.props.handleSearchError);
+  }
+  
   getArtistID(initialArtist) {
     // Query for artist ID and return promise
     return new Promise((fulfill, reject) => {
@@ -61,10 +75,7 @@ class SearchBox extends React.Component {
       // Blur the input
       e.target.blur();
       
-      this.getArtistID(this.props.initialArtist)
-        .then(this.getRelatedArtists)
-        .then(this.props.handleRelatedArtists)
-        .catch(this.props.handleSearchError);
+      this.triggerSearch();
     }
   }
   

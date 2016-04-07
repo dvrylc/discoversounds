@@ -14,12 +14,14 @@ class App extends React.Component {
     this.handleRelatedArtists = this.handleRelatedArtists.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSearchError = this.handleSearchError.bind(this);
+    this.handleNewSearch = this.handleNewSearch.bind(this);
     
     this.state = {
       error: false,
       errorMessage: '',
       initialArtist: '',
-      relatedArtists: []
+      relatedArtists: [],
+      triggerNewSearch: false
     }
   }
   
@@ -28,13 +30,15 @@ class App extends React.Component {
     this.setState({
       error: false,
       errorMessage: '',
-      relatedArtists: artists
+      relatedArtists: artists,
+      triggerNewSearch: false
     });
   }
   
   handleSearchChange(artist) {
     this.setState({
-      initialArtist: artist
+      initialArtist: artist,
+      triggerNewSearch: false
     });
   }
   
@@ -43,7 +47,15 @@ class App extends React.Component {
       error: true,
       errorMessage: err,
       initialArtist: '',
-      relatedArtists: []
+      relatedArtists: [],
+      triggerNewSearch: false
+    });
+  }
+  
+  handleNewSearch(artist) {
+    this.setState({
+      initialArtist: artist,
+      triggerNewSearch: true
     });
   }
   
@@ -54,6 +66,7 @@ class App extends React.Component {
         
         <SearchBox
           initialArtist={this.state.initialArtist}
+          triggerNewSearch={this.state.triggerNewSearch}
           handleRelatedArtists={this.handleRelatedArtists}
           handleSearchChange={this.handleSearchChange}
           handleSearchError={this.handleSearchError}
@@ -63,6 +76,7 @@ class App extends React.Component {
           error={this.state.error}
           errorMessage={this.state.errorMessage}
           artists={this.state.relatedArtists}
+          handleNewSearch={this.handleNewSearch}
         />
       </div>
     );
