@@ -41,7 +41,9 @@ class App extends React.Component {
   handleSearchError(err) {
     this.setState({
       error: true,
-      errorMessage: err
+      errorMessage: err,
+      initialArtist: '',
+      relatedArtists: []
     });
   }
   
