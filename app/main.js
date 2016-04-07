@@ -25,7 +25,7 @@ class App extends React.Component {
   handleRelatedArtists(artists) {
     this.setState({
       error: false,
-      error: '',
+      errorMessage: '',
       relatedArtists: artists
     });
   }
