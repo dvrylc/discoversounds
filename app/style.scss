@@ -2,7 +2,6 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
 $darkblue: #283593;
-$blue: #3949AB;
 $grey: #E6E6E6;
 
 html, body, #app-container {
@@ -13,10 +12,10 @@ html, body, #app-container {
 body {
   margin: 0;
   
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 1em;
-  color: $blue;
+  color: #3949AB;
   
   background: #333;
 }
@@ -79,10 +78,6 @@ a {
     width: 40px;
     border-radius: 40px;
     margin-right: 15px;
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
   
   .artist {
