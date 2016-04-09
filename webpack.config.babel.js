@@ -17,7 +17,8 @@ export default {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: __dirname + '/app/index.html'
+      template: __dirname + '/app/index.html',
+      favicon: 'app/favicon/favicon.png'
     })
   ],
   resolve: {
