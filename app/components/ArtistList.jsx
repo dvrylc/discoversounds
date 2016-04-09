@@ -12,7 +12,7 @@ class ArtistList extends React.Component {
       );
     } else {
       var artistRows = this.props.artists.map((artist, index) => {
-        return <ArtistRow key={index} artist={artist} handleNewSearch={this.props.handleNewSearch}/>
+        return <ArtistRow key={index} artist={artist} handleNewSearch={this.props.handleNewSearch} />
       });
       
       return (
