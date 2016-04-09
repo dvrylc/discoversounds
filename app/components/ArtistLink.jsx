@@ -23,7 +23,7 @@ class ArtistLink extends React.Component {
     
     return (
       <div className="links">
-        <a href="javascript:void(0)" target="_blank" onClick={this.handleNewSearch}>
+        <a href="javascript:void(0)" onClick={this.handleNewSearch}>
           <i className="fa fa-refresh" />
         </a>
       
