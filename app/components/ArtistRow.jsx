@@ -5,8 +5,13 @@ import ArtistLink from './ArtistLink';
 class ArtistRow extends React.Component {
   render() {
     var artist = this.props.artist;
+    console.log(artist.name);
+    
+    var backgroundUrl = artist.images.length > 0 ?
+                          `url('${artist.images[artist.images.length - 1].url}')` :
+                          '#283593';
     var styles = {
-      background: `url('${artist.images[artist.images.length - 1].url}')`,
+      background: backgroundUrl,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
