@@ -13,6 +13,7 @@ class SearchBox extends React.Component {
   // Lifecycle
   componentDidUpdate() {
     if (this.props.triggerNewSearch) {
+      this.props.handleRelatedArtists([]);
       this.triggerSearch();
     }
   }
