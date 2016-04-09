@@ -7,8 +7,7 @@ class Header extends React.Component {
       <div className="header">
         <img src={Logo} />
         <span>
-          for the love of music,
-          by <a href="https://darylchan.net">@dvrylc</a>
+          for the love of music, by <a href="https://darylchan.net">@dvrylc</a> &bull; <a href="https://github.com/dvrylc/discoversounds">source on GitHub</a>
         </span>
       </div>
     );
