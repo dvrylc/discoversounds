@@ -68,9 +68,7 @@ class SearchBox extends React.Component {
   handleKeyDown(e) {
     /*
       If user hits Enter and artist field is not blank,
-      query for Spotify artist ID
-      then query for related artists
-      then update main app's state
+      trigger a new search
     */
     if (e.key === 'Enter' && this.props.initialArtist !== '') {
       // Blur the input
