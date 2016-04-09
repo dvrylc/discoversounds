@@ -4,7 +4,8 @@
   "description": "Music discovery tool",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "rm -rf dist && webpack -p"
+    "build": "rm -rf dist && webpack -p",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
