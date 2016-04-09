@@ -9,7 +9,7 @@ class ArtistLink extends React.Component {
   }
   
   // Event listeners
-  handleNewSearch(e) {
+  handleNewSearch() {
     this.props.handleNewSearch(this.props.artist);
   }
   
