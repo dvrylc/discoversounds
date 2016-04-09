@@ -8,6 +8,7 @@ import SearchBox from './components/SearchBox';
 import ArtistList from './components/ArtistList';
 
 class App extends React.Component {
+  // Constructor
   constructor() {
     super();
     
@@ -37,8 +38,7 @@ class App extends React.Component {
   
   handleSearchChange(artist) {
     this.setState({
-      initialArtist: artist,
-      triggerNewSearch: false
+      initialArtist: artist
     });
   }
   
@@ -59,6 +59,7 @@ class App extends React.Component {
     });
   }
   
+  // Render
   render() {
     return (
       <div id="app">
